@@ -21,7 +21,7 @@ int minMax(int allumettes,int joueur){
   {
     if (joueur == 1)
     {
-      return 1;// j'avais swap les deux donc l'ordi sachant que si il perdait gagner la partie donc il faisait toujours la plus petite somme 1 à chaque fois pour atteindre 0
+      return 1;// j'ai swap les deux donc l'ordi pensait que si le joeur gagnait gagner la partie, il était recompensé donc il faisait toujours la plus petite somme 1 à chaque fois pour atteindre 0 et perdre
     }
     else  
     {
@@ -74,7 +74,7 @@ int retourMeilleurMouv(int allumettes)
     {
       if(allumettes-i>=0)
       {
-        int valeur = minMax(allumettes-i,2);// Votre code actuel : Évalue comme si l'ordinateur jouait encore après son coup
+        int valeur = minMax(allumettes-i,2);
         if (valeur>meilleur_valeur)
         {
           meilleur_valeur= valeur;
@@ -89,7 +89,6 @@ int retourMeilleurMouv(int allumettes)
 
 Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   lcd.begin(16, 2);
   lcd.setCursor(0,0);
@@ -110,7 +109,7 @@ void loop() {
   if (key) {
     // Le joueur choisit seulement 1, 2 ou 3
     if (key == '1' || key == '2' || key == '3') {
-      int choix = key - '0'; // convertit le caractère en entier
+      int choix = key - '0';
       allumettes -= choix;
 
       lcd.clear();
@@ -156,7 +155,6 @@ void loop() {
         return;
       }
 
-      // Invite à jouer
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("Ton tour !");
