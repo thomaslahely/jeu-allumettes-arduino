@@ -109,11 +109,3 @@ int minMax(int allumettes, int joueur) {
 L'algorithme garantit que l'ordinateur :
 - **Gagne** toujours s'il joue en premier avec 21 allumettes
 - **Maintient** des positions gagnantes (laisse un multiple de 4 allumettes + 1)
-
-
-
-Projet éducatif - Libre d'utilisation et de modification.
-
----
-
-*Amusez-vous bien avec ce classique des jeux de stratégie ! 🎮🔥*
